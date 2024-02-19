@@ -1,2 +1,2 @@
 # js-practice03
-website
+website　デザイン練習
