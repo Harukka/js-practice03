@@ -1,14 +1,31 @@
+:root {
+    --potato-skin: #f4e8c1; /* ポテトの皮のような薄い茶色 */
+    --potato-text: #5a3e36; /* 濃い茶色のテキスト色 */
+    --potato-baked: #a67c52; /* ポテトの焼き色をイメージした中間の茶色 */
+    --text-white: #ffffff; /* 白色 */
+    --tan: #d2b48c; /* タン（ポテトの皮） */
+    --orange-brown: #e2943b; /* オレンジブラウン（焼きポテト） */
+    --sienna: #a0522d; /* シエナ（さつまいもの皮） */
+    --dark-orange: #ff8c00; /* ダークオレンジ（さつまいもの内部） */
+}
+
+
 body {
+    background-color: var(--potato-skin);
+    color: var(--potato-text);
     margin: 0;
+    padding: 0;
+    height: 100%; /* ビューポートの高さに合わせる */
     font-family: Arial, sans-serif;
 }
 .header {
+    background-color: var(--potato-baked);
+    color: var(--text-white);
+    font-family: Arial, sans-serif;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
     padding: 10px 20px;
 }
 .nav-links {
@@ -19,9 +36,8 @@ body {
     padding: 0 10px;
 }
 .nav-links a {
-    text-decoration: none;
-    color: #fff;
-}
+    color: var(--text-white);
+    text-decoration: none;}
 .hamburger {
     display: none;
     cursor: pointer;
@@ -47,7 +63,100 @@ body {
         position: absolute;
         top: 33px;
         left: 0;
-        background-color: #333;
+        background-color: var(--potato-baked);
     }
     
+}
+.potato {
+    font-size: 5rem; /* 絵文字のサイズを調整 */
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear infinite; /* 20秒かけて無限に回転 */
+}
+.title-potato{
+    padding-top: 10%;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* コンテナの幅を超えたら折り返す */
+    justify-content: center; /* カードを水平方向に中央揃え */
+    align-items: center; /* カードを垂直方向に中央揃え */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 200px; /* 幅を設定 */
+    height: 200px; /* 高さを設定 */
+    flex: 0 0 200px; /* flex-grow, flex-shrink, flex-basisを固定値で設定 */
+    margin: 10px;
+    text-decoration: none;
+    margin: 10px; /* カード間の余白 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content {
+    border: none; /* 枠線 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* テキストを中央揃え */
+    color: var(--potato-text); /* テキスト色をポテトのテキスト色に設定 */
+}
+.card1 {
+    background-color: var(--tan);
+}
+
+.card2 {
+    background-color: var(--orange-brown);
+}
+
+.card3 {
+    background-color: var(--sienna);
+}
+
+.card4 {
+    background-color: var(--dark-orange);
+}
+
+.footer {    
+    background-color: var(--potato-baked);
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* フッターの高さを調整 */
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+}
+.footer a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+.nav-links a:hover, .footer a:hover {
+    color: var(--potato-skin);
+}
+.hamburger div {
+    background-color: var(--text-white);
 }

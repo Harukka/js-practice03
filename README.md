@@ -1,2 +1,4 @@
 # js-practice03
-website　デザイン練習
+website　練習
+editor : Cursor
+
