@@ -114,6 +114,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーション効果を滑らかに */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 通常時の影 */
+}
+
+.card:hover {
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+.card:active {
+    transform: scale(0.95); /* クリック時に少し縮小 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* クリック時の影を少し弱めに */
 }
 
 .card-content {
@@ -136,6 +148,29 @@ body {
 
 .card4 {
     background-color: var(--dark-orange);
+}
+.potato-rain {
+    position: absolute;
+    top: 0;
+    font-size: 24px;
+}
+
+@keyframes fall {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100vh;
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
 }
 
 .footer {    
